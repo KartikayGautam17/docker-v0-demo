@@ -10,6 +10,7 @@ services:
       NODE_ENV: development
     depends_on:
       - postgres
+      - redis
     networks:
       - postgres-network
 
@@ -26,6 +27,7 @@ services:
       DB_USER: postgres
       DB_PASSWORD: 1234
       DB_NAME: mydb
+      REDIS_SERVER_URL: redis://redis:6379
     depends_on:
       - postgres
       - redis
